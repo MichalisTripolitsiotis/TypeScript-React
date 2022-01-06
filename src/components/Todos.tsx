@@ -1,4 +1,5 @@
 import Todo from "../models/todo";
+import TodoItem from "./TodoItem";
 // Todos: React.FC<{ ... }>
 // Type annotation to all custom components
 // Specifies the children attribute from props (already-built in)
@@ -8,7 +9,7 @@ const Todos: React.FC<{ items: Todo[] }> = (props) => {
     return (
         <ul>
             {props.items.map(item => (
-                <li key={item.id}>{item.text}</li>
+                <TodoItem key={item.id} text={ item.text}/>
             ))}
         </ul>
     );
